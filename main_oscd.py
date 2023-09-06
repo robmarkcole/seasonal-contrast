@@ -22,9 +22,9 @@ class SiamSegment(LightningModule):
         super().__init__()
         self.model = get_segmentation_model(backbone, feature_indices, feature_channels)
         self.criterion = BCEWithLogitsLoss()
-        self.prec = Precision(num_classes=1, threshold=0.5)
-        self.rec = Recall(num_classes=1, threshold=0.5)
-        self.f1 = F1(num_classes=1, threshold=0.5)
+        self.prec = Precision(task='binary', num_classes=1, threshold=0.5)
+        self.rec = Recall(task='binary', num_classes=1, threshold=0.5)
+        self.f1 = F1(task='binary', num_classes=1, threshold=0.5)
 
     def forward(self, x1, x2):
         return self.model(x1, x2)
