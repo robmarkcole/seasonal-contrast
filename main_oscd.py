@@ -80,6 +80,7 @@ class SiamSegment(LightningModule):
 if __name__ == "__main__":
     # pl.seed_everything(42)
 
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     parser = ArgumentParser()
     # parser.add_argument("--gpus", type=int, default=0)
     parser.add_argument("--data_dir", type=str)
@@ -95,7 +96,7 @@ if __name__ == "__main__":
     elif args.backbone_type == "imagenet":
         backbone = resnet.resnet18(pretrained=True)
     elif args.backbone_type == "pretrain":
-        model = MocoV2.load_from_checkpoint(args.ckpt_path)
+        model = MocoV2.load_from_checkpoint(args.ckpt_path, map_location=device)
         backbone = deepcopy(model.encoder_q)
     else:
         raise ValueError()
@@ -116,7 +117,7 @@ if __name__ == "__main__":
     )
     checkpoint_callback = ModelCheckpoint(filename="{epoch}", save_weights_only=True)
     trainer = Trainer(
-        # gpus=args.gpus,
+        accelerator = device,
         logger=logger,
         callbacks=[checkpoint_callback],
         max_epochs=1,
