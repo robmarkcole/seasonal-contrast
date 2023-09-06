@@ -6,3 +6,4 @@ datasets/oscd/*/*/*.png
 *.geojson
 venv*
 logs/*
+datasets/oscd/*
