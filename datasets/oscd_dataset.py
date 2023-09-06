@@ -24,6 +24,15 @@ QUANTILES = {
 
 
 def read_image(path, bands, normalize=True):
+    """
+    Read image tifs from path, stack required bands and return as PIL
+
+    :param path: path to folder with tifs
+    :param bands: list of bands to read
+    :param normalize: whether to normalize image
+
+    
+    """
     patch_id = next(path.iterdir()).name[:-8]
     channels = []
     for b in bands:
@@ -43,8 +52,8 @@ def read_image(path, bands, normalize=True):
 class ChangeDetectionDataset(Dataset):
 
     def __init__(self, root, split='all', bands=None, transform=None, patch_size=96):
-        self.root = Path(root)
-        self.split = split
+        self.root = Path(root) # the Images folder
+        self.split = split # train, test, all
         self.bands = bands if bands is not None else RGB_BANDS
         self.transform = transform
 
@@ -52,7 +61,7 @@ class ChangeDetectionDataset(Dataset):
             names = f.read().strip().split(',')
 
         self.samples = []
-        for name in names:
+        for name in names: # location names, e.g paris
             fp = next((self.root / name / 'imgs_1').glob(f'*{self.bands[0]}*'))
             img = rasterio.open(fp)
             limits = product(range(0, img.width, patch_size), range(0, img.height, patch_size))

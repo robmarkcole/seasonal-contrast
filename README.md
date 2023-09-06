@@ -70,7 +70,6 @@ python main_oscd.py \
   --backbone_type pretrain --ckpt_path checkpoints/seco_resnet18_1m.ckpt
 ```
 
-
 ### Datasets
 
 Our collected SeCo datasets can be downloaded as following:
@@ -91,3 +90,5 @@ Our pre-trained SeCo models can be downloaded as following:
 | SeCo-1M   | ResNet-18    | [download](https://zenodo.org/record/4728033/files/seco_resnet18_1m.ckpt?download=1)   | `53d5c41d0f479bdfd31d6746ad4126db` |
 | SeCo-100K | ResNet-50    | [download](https://zenodo.org/record/4728033/files/seco_resnet50_100k.ckpt?download=1) | `9672c303f6334ef816494c13b9d05753` |
 | SeCo-1M   | ResNet-50    | [download](https://zenodo.org/record/4728033/files/seco_resnet50_1m.ckpt?download=1)   | `7b09c54aed33c0c988b425c54f4ef948` |
+
+Place in `checkpoints` dir
