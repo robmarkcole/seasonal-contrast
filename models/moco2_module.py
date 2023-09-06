@@ -5,7 +5,7 @@ import torch
 from torch import nn, optim
 import torch.nn.functional as F
 import torchvision
-from pytorch_lightning import LightningModule
+from lightning.pytorch import LightningModule
 from pl_bolts.metrics import precision_at_k
 
 

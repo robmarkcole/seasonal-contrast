@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from pytorch_lightning import Callback
+from lightning.pytorch import Callback
 from pl_bolts.models.self_supervised.evaluator import SSLEvaluator
 from sklearn.metrics import average_precision_score
 

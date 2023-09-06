@@ -2,7 +2,7 @@ import random
 
 from torch.utils.data import DataLoader
 from torchvision.transforms import functional as TF
-from pytorch_lightning import LightningDataModule
+from lightning.pytorch import LightningDataModule
 
 from datasets.oscd_dataset import ChangeDetectionDataset
 
