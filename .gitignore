@@ -1,2 +1,2 @@
-datasets/oscd/OSCD_merged_mages_labels_all.zip
-checkpoints/seco_resnet50_100k.ckpt
+datasets/oscd/*.zip
+checkpoints/*.ckpt
