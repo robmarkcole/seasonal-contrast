@@ -4,3 +4,4 @@ checkpoints/*.ckpt
 *.tif
 datasets/oscd/*/*/*/*.png
 *.geojson
+venv*
