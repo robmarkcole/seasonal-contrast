@@ -2,6 +2,6 @@ datasets/oscd/*.zip
 checkpoints/*.ckpt
 .DS_Store
 *.tif
-datasets/oscd/*/*/*/*.png
+datasets/oscd/*/*/*.png
 *.geojson
 venv*

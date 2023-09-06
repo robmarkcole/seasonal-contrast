@@ -66,7 +66,7 @@ python main_eurosat.py \
 To train a supervised change detection model on [OSCD](https://rcdaudt.github.io/oscd/) from a pre-trained SeCo model, run:
 ```shell
 python main_oscd.py \
-  --data_dir datasets/oscd/OSCD_merged \
+  --data_dir datasets/oscd \
   --backbone_type pretrain --ckpt_path checkpoints/seco_resnet18_1m.ckpt
 ```
 
@@ -92,3 +92,8 @@ Our pre-trained SeCo models can be downloaded as following:
 | SeCo-1M   | ResNet-50    | [download](https://zenodo.org/record/4728033/files/seco_resnet50_1m.ckpt?download=1)   | `7b09c54aed33c0c988b425c54f4ef948` |
 
 Place in `checkpoints` dir
+
+## Dev
+* `python3 -m venv venv`
+* `source venv/bin/activate`
+* `(venv) $ pip install -r requirements.txt`
