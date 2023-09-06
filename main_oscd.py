@@ -82,7 +82,6 @@ if __name__ == "__main__":
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     parser = ArgumentParser()
-    # parser.add_argument("--gpus", type=int, default=0)
     parser.add_argument("--data_dir", type=str)
     parser.add_argument("--patch_size", type=int, default=96)
     parser.add_argument("--backbone_type", type=str, default="imagenet")
@@ -117,10 +116,8 @@ if __name__ == "__main__":
     )
     checkpoint_callback = ModelCheckpoint(filename="{epoch}", save_weights_only=True)
     trainer = Trainer(
-        accelerator = device,
         logger=logger,
         callbacks=[checkpoint_callback],
         max_epochs=1,
-        # weights_summary="full",
     )
     trainer.fit(model, datamodule=datamodule)

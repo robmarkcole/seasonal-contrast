@@ -1,6 +1,6 @@
 *ServiceNow completed its acquisition of Element AI on January 8, 2021. All references to Element AI in the materials that are part of this project should refer to ServiceNow.*
 
-This fork updates lightning to > 2.0. Unfortunately some issues remain due to renaming of hooks
+This fork updates lightning to > 2.0.
 
 ## Seasonal Contrast: Unsupervised Pre-Training from Uncurated Remote Sensing Data
 
